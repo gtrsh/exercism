@@ -14,11 +14,13 @@ const routes = {
     'GET /emails': getEmailsRoute,
 };
 
-app.use((req, res) => {
+const router = (req, res) => {
     const route = req.method + ' ' + req.url;
     const handler = routes[route] || noRouteFound;
 
     handler(req, res);
-});
+}
+
+app.use(router);
 
 app.listen(8090);
