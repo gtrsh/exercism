@@ -17,9 +17,25 @@ const createEmailRoute = async (req, res) => {
     res.status(201);
     res.send(newEmail);
 };
+const updateEmailRoute = async (req, res) => {
+    const body = await readBody(req);
+    const email = emails.find(email => email.id === req.params.id);
+    Object.assign(email, JSON.parse(body));
+
+    res.status(200);
+    res.send(email);
+};
+const deleteEmailRoute = (req, res) => {
+    const index = emails.findIndex(email => email.id === req.params.id);
+    emails.splice(index, 1);
+
+    res.sendStatus(204);
+};
 
 emailsRouter.get('/', getEmailsRoute);
 emailsRouter.get('/:id', getEmailRoute);
 emailsRouter.post('/', createEmailRoute);
+emailsRouter.patch('/:id', updateEmailRoute);
+emailsRouter.delete('/:id', deleteEmailRoute);
 
 module.exports = emailsRouter;
