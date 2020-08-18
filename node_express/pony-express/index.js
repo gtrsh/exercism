@@ -16,9 +16,9 @@ const routes = {
 
 app.use((req, res) => {
     const route = req.method + ' ' + req.url;
-    const handler = routes[route];
+    const handler = routes[route] || noRouteFound;
 
-    handler ? handler(req, res) : noRouteFound(req, res);
+    handler(req, res);
 });
 
 app.listen(8090);
