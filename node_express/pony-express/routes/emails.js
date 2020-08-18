@@ -32,10 +32,13 @@ const deleteEmailRoute = (req, res) => {
     res.sendStatus(204);
 };
 
-emailsRouter.get('/', getEmailsRoute);
-emailsRouter.get('/:id', getEmailRoute);
-emailsRouter.post('/', createEmailRoute);
-emailsRouter.patch('/:id', updateEmailRoute);
-emailsRouter.delete('/:id', deleteEmailRoute);
+emailsRouter.route('/')
+    .get(getEmailsRoute)
+    .post(createEmailRoute);
+
+emailsRouter.route('/:id')
+    .get(getEmailRoute)
+    .patch(updateEmailRoute)
+    .delete(deleteEmailRoute);
 
 module.exports = emailsRouter;
