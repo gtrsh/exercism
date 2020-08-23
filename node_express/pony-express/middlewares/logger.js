@@ -1,6 +1,4 @@
-const logger = (req, res, next) => {
-    console.log(`[${req.method}] ${req.url}`);
-    next();
-}
+const morgan = require('morgan');
 
+const logger = morgan('tiny');
 module.exports = logger;

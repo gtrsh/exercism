@@ -1,8 +1,8 @@
 'use strict';
 
 const express = require('express');
+const bodyParser = require('body-parser');
 const emails = require('../fixtures/emails');
-const jsonBodyParser = require('../middlewares/json_body_parser');
 const generateId = require('../utils/gen-id');
 
 const emailsRouter = express.Router();
@@ -32,11 +32,11 @@ const deleteEmailRoute = (req, res) => {
 
 emailsRouter.route('/')
     .get(getEmailsRoute)
-    .post(jsonBodyParser, createEmailRoute);
+    .post(bodyParser.json(), createEmailRoute);
 
 emailsRouter.route('/:id')
     .get(getEmailRoute)
-    .patch(jsonBodyParser, updateEmailRoute)
+    .patch(bodyParser.json(), updateEmailRoute)
     .delete(deleteEmailRoute);
 
 module.exports = emailsRouter;

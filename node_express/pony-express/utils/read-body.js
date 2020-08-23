@@ -5,7 +5,6 @@ const readBody = (req) =>
         const chunks = [];
 
         req.on('data', (chunk) => {
-            console.log('chunk: ', chunk.toString());
             chunks.push(chunk);
         });
 
