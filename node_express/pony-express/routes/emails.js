@@ -4,6 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const emails = require('../fixtures/emails');
 const generateId = require('../utils/gen-id');
+const requireAuth = require('../middlewares/require-auth');
 
 const emailsRouter = express.Router();
 
@@ -30,6 +31,7 @@ const deleteEmailRoute = (req, res) => {
     res.sendStatus(204);
 };
 
+emailsRouter.use(requireAuth);
 emailsRouter.route('/')
     .get(getEmailsRoute)
     .post(bodyParser.json(), createEmailRoute);
