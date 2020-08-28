@@ -1,9 +1,4 @@
-const users = require('../fixtures/users');
-
-const findUserByCredentials = ({ username, password }) =>
-    users.find(user => user.username === username && user.password === password)
-
-const basicAuth = (req, res, next) => {
+const basicAuth = (findUserByCredentials) => (req, res, next) => {
     const header = req.headers.authorization || '';
     const [type, payload] = header.split(' ');
 
