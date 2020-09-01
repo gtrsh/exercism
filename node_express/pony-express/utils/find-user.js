@@ -1,3 +1,5 @@
+'use strict';
+
 const users = require('../fixtures/users');
 
 const findUserByCredentials = ({ username, password }) =>

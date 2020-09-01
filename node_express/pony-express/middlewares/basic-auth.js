@@ -1,3 +1,5 @@
+'use strict';
+
 const basicAuth = (findUserByCredentials) => (req, res, next) => {
     const header = req.headers.authorization || '';
     const [type, payload] = header.split(' ');

@@ -1,3 +1,5 @@
+'use strict';
+
 const readBody = require('../utils/read-body');
 
 const jsonBodyParser = async (req, res, next) => {
