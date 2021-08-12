@@ -2,7 +2,11 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/gtrsh/backend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/gtrsh/backend-project-lvl1/actions)",
+  "type": "module",
   "main": "index.js",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
