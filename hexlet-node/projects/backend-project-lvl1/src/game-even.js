@@ -1,7 +1,6 @@
 import _ from 'lodash'
 import readlineSync from 'readline-sync'
-
-const QUIZ_ITEMS_COUNT = 3
+import { wrongAnswer, gameFail, gameSuccess, QUIZ_ITEMS_COUNT } from './commons.js'
 
 const getQuizData = () => _.range(QUIZ_ITEMS_COUNT).map(() => _.random(100))
 const isAnswerRight = (num, answer) => (num % 2 === 0 && answer === 'yes') || (num % 2 !== 0 && answer === 'no')
@@ -17,18 +16,19 @@ const gameEven = (name) => {
 
     if (isAnswerRight(num, answer)) {
       console.log('Correct!')
+      isGameFailed = false
     } else {
       const correctAnswer = num % 2 === 0 ? 'yes' : 'no'
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`)
+      wrongAnswer(answer, correctAnswer)
       isGameFailed = true
       break
     }
   }
 
   if (isGameFailed) {
-    console.log(`Let's try again, ${name}!`)
+    gameFail(name)
   } else {
-    console.log(`Congratulations, ${name}!`)
+    gameSuccess(name)
   }
 }
 
