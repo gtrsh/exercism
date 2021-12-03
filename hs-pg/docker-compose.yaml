@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  hs-db:
+    container_name: hs-db
+    image: aidbox/db:12.1.1-PRO.RC1
+    ports:
+      - 5400:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - "./pgdata:/data/"
