@@ -2,7 +2,7 @@
  * Derived type Student from Person
  * Author: Luis Atencio
  */
-const Person = require('./Person.js').Person;
+const { Person } = require('./Person.js');
 
 exports.Student = class Student extends Person {
 	constructor(ssn, firstname, lastname, school, birthYear = null, address = null) {
