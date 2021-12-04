@@ -1,5 +1,7 @@
 #lang htdp/bsl
 
+(require 2htdp/image)
+
 ;; Exercise 1
 
 (define x 12)
