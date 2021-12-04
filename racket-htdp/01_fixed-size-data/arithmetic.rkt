@@ -23,3 +23,12 @@
  (substring str 0 i)
  "_"
  (substring str i))
+
+;; Exercise 4
+
+(substring str 0 i)
+(substring str (+ i 1) (string-length str))
+
+(string-append
+ (substring str 0 i)
+ (substring str (+ i 1) (string-length str)))
