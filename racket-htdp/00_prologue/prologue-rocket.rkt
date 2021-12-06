@@ -5,8 +5,8 @@
 
 (define WIDTH 100)
 (define HEIGHT 600)
-(define V 3)
-(define X 50)
+(define V 4)
+(define X 60)
 
 (define SCENE (empty-scene WIDTH HEIGHT))
 (define ROCKET (circle 10 "solid" "pink"))
