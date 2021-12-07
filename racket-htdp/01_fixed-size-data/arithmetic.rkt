@@ -34,3 +34,13 @@
 (string-append
  (substring str 0 i)
  (substring str (+ i 1) (string-length str)))
+
+;; Exercise 5
+
+(define tree-section
+  (triangle 20 "solid" "green"))
+
+(above
+ tree-section
+ tree-section
+ tree-section)
