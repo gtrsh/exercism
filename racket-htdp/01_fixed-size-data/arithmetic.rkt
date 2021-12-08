@@ -44,3 +44,14 @@
  tree-section
  tree-section
  tree-section)
+
+;; Exercise 6
+
+(define kitten1-file
+  "file:///home/gtrsh/Documents/exercism/racket-htdp/01_fixed-size-data/cat1.png")
+(define kitten1
+  (bitmap/url kitten1-file))
+
+(*
+ (image-height kitten1)
+ (image-width  kitten1))
