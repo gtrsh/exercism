@@ -47,11 +47,16 @@
 
 ;; Exercise 6
 
-(define kitten1-file
-  "files/cat1.png")
 (define kitten1
-  (bitmap kitten1-file))
+  (bitmap "files/cat1.png"))
 
 (*
  (image-height kitten1)
  (image-width  kitten1))
+
+;; Exercise 7
+
+(define sunny  #t)
+(define friday #f)
+
+(or (not sunny) friday)
