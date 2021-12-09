@@ -79,3 +79,24 @@
   [(> height width) "tall"]
   [(< height width) "wide"]
   [else "square"])
+
+;; Exercise 9
+
+(define in #t)
+
+(define (string-to-num in)
+  (string-length in))
+(define (image-to-num in)
+  (*
+   (image-height in)
+   (image-width  in)))
+(define (num-to-num in)
+  (abs in))
+(define (bool-to-num in)
+  (if in 10 20))
+
+(cond
+  [(string?  in) (string-to-num in)]
+  [(image?   in) (image-to-num  in)]
+  [(number?  in) (num-to-num    in)]
+  [(boolean? in) (bool-to-num   in)])
