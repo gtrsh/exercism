@@ -60,3 +60,22 @@
 (define friday #f)
 
 (or (not sunny) friday)
+
+;; Exercise 8
+
+(define black-square
+  (rectangle 300 300 "solid" "black"))
+(define height (image-height black-square))
+(define width  (image-width black-square))
+
+(if
+ (>
+  (image-height kitten1)
+  (image-width  kitten1))
+ "tall"
+ "wide")
+
+(cond
+  [(> height width) "tall"]
+  [(< height width) "wide"]
+  [else "square"])
