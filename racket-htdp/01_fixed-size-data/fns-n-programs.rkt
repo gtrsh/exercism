@@ -9,3 +9,11 @@
 
 (dist 3 4)
 (dist 12 5)
+
+;; Exercise 12
+
+(define (cvolume side)
+  (* side side side))
+
+(cvolume 2)
+(cvolume 3)
