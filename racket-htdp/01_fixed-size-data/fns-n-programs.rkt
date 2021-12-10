@@ -17,3 +17,10 @@
 
 (cvolume 2)
 (cvolume 3)
+
+;; Exercise 13
+
+(define (string-first s)
+  (substring s 0 1))
+
+(string-first "hello")
