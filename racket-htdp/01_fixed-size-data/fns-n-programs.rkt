@@ -24,3 +24,10 @@
   (substring s 0 1))
 
 (string-first "hello")
+
+;; Exercise 14
+
+(define (string-last s)
+  (substring s (- (string-length s) 1)))
+
+(string-last "world")
