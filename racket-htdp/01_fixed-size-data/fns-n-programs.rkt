@@ -6,3 +6,6 @@
 
 (define (dist x y)
   (sqrt (+ (* x x) (* y y))))
+
+(dist 3 4)
+(dist 12 5)
