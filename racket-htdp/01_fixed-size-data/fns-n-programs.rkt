@@ -31,3 +31,11 @@
   (substring s (- (string-length s) 1)))
 
 (string-last "world")
+
+;; Exercise 15
+
+(define (==> sn fr)
+  (or (not sn) fr))
+
+(==> #f #t)
+(==> #t #f)
