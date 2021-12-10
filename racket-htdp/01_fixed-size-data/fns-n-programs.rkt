@@ -39,3 +39,12 @@
 
 (==> #f #t)
 (==> #t #f)
+
+;; Exercise 16
+
+(define (image-area img)
+  (*
+   (image-height img)
+   (image-width img)))
+
+(image-area (rectangle 10 20 100 "black"))
