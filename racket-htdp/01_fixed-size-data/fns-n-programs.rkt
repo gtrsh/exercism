@@ -63,3 +63,10 @@
 (image-classify (rectangle 100 100 "solid" "red"))
 (image-classify (rectangle 10  100 "solid" "red"))
 (image-classify (rectangle 100 10  "solid" "red"))
+
+;; Exercise 18
+
+(define (string-join str1 str2)
+  (string-append str1 "_" str2))
+
+(string-join "hello" "world")
