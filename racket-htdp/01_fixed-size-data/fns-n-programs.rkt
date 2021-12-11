@@ -70,3 +70,11 @@
   (string-append str1 "_" str2))
 
 (string-join "hello" "world")
+
+;; Exercise 19
+
+(define (string-insert str i)
+  (string-append
+   (substring str 0 i)
+   "_"
+   (substring str i )))
