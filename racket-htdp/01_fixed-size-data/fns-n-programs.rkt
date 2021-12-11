@@ -78,3 +78,14 @@
    (substring str 0 i)
    "_"
    (substring str i )))
+
+(string-insert "racket" 3)
+
+;; Exercise 20
+
+(define (string-delete str i)
+  (string-append
+   (substring str 0 i)
+   (substring str (+ i 1) (string-length str))))
+
+(string-delete "bracket" 0)
