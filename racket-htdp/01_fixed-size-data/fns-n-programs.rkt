@@ -48,3 +48,18 @@
    (image-width img)))
 
 (image-area (rectangle 10 20 100 "black"))
+
+;; Exercise 17
+
+(define (image-classify img)
+;;  (define height (image-height img))
+;;  (define width  (image-width img))
+
+  (cond
+    [(> (image-height img) (image-width img)) "tall"]
+    [(< (image-height img) (image-width img)) "wide"]
+    [else "square"]))
+
+(image-classify (rectangle 100 100 "solid" "red"))
+(image-classify (rectangle 10  100 "solid" "red"))
+(image-classify (rectangle 100 10  "solid" "red"))
