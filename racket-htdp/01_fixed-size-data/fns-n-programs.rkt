@@ -89,3 +89,24 @@
    (substring str (+ i 1) (string-length str))))
 
 (string-delete "bracket" 0)
+
+;; Exercise 28
+
+(define (attendees ticket-price)
+  (- 120 (* (- ticket-price 5.0) (/ 15 0.1))))
+
+(define (revenue ticket-price)
+  (* ticket-price (attendees ticket-price)))
+
+(define (cost ticket-price)
+  (+ 180 (* 0.04 (attendees ticket-price))))
+
+(define (profit ticket-price)
+  (- (revenue ticket-price)
+     (cost ticket-price)))
+
+(profit 1)
+(profit 2)
+(profit 3)
+(profit 4)
+(profit 5)
