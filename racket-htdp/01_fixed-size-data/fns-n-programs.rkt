@@ -92,14 +92,24 @@
 
 ;; Exercise 28
 
+(define CUSTOMERS_BASE 120)
+(define CUSTOMERS_DIFF 15)
+(define PRICE_BASE 5.0)
+(define PRICE_DIFF 0.1)
+(define COST_BASE 180)
+(define COST_DIFF 0.04)
+
 (define (attendees ticket-price)
-  (- 120 (* (- ticket-price 5.0) (/ 15 0.1))))
+  (- CUSTOMERS_BASE
+     (*
+      (- ticket-price PRICE_BASE)
+      (/ CUSTOMERS_DIFF PRICE_DIFF))))
 
 (define (revenue ticket-price)
   (* ticket-price (attendees ticket-price)))
 
 (define (cost ticket-price)
-  (+ 180 (* 0.04 (attendees ticket-price))))
+  (+ COST_BASE (* COST_DIFF (attendees ticket-price))))
 
 (define (profit ticket-price)
   (- (revenue ticket-price)
