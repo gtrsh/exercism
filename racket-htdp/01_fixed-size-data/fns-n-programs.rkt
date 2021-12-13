@@ -120,3 +120,18 @@
 (profit 3)
 (profit 4)
 (profit 5)
+
+;; Exercise 29
+
+(define COST_FIX 1.5)
+
+(define (cost-upd ticket-price)
+  (* COST_FIX (attendees ticket-price)))
+
+(define (profit-upd ticket-price)
+  (- (revenue ticket-price)
+     (cost-upd ticket-price)))
+
+(profit-upd 3)
+(profit-upd 4)
+(profit-upd 5)
