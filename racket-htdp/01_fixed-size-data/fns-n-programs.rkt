@@ -20,6 +20,10 @@
 
 ;; Exercise 13
 
+;; String -> String
+;; get first character of non-empty string
+;; given "cat", expected "c"
+;; given "", exprected Error
 (define (string-first s)
   (substring s 0 1))
 
