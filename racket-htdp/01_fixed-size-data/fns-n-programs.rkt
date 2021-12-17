@@ -23,7 +23,7 @@
 ;; String -> String
 ;; get first character of non-empty string
 ;; given "cat", expected "c"
-;; given "", exprected Error
+;; given "", expected Error
 (define (string-first s)
   (substring s 0 1))
 
@@ -31,6 +31,10 @@
 
 ;; Exercise 14
 
+;; String -> String
+;; get last character of non-empty string
+;; given "cat", expected "t"
+;; given "", expected Error
 (define (string-last s)
   (substring s (- (string-length s) 1)))
 
