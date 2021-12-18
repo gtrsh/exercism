@@ -50,6 +50,9 @@
 
 ;; Exercise 16
 
+;; Image -> Number
+;; compute image area
+;; given (rectangle 20 2 ...), expected 40
 (define (image-area img)
   (*
    (image-height img)
