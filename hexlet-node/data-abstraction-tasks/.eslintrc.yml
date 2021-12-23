@@ -1,0 +1,20 @@
+---
+
+plugins:
+  - import
+  - node
+  - promise
+
+env:
+  node: true
+  es2020: true
+
+extends:
+  - 'standard'
+  - 'plugin:import/recommended'
+  - 'plugin:node/recommended'
+  - 'plugin:promise/recommended'
+
+parserOptions:
+  ecmaVersion: 11
+  sourceType: module
