@@ -4,9 +4,9 @@ const getMidpoint = (p1, p2) => ({
   y: (p1.y + p2.y) / 2
 })
 
-const makeDecartPoint = (x, y) => ({x, y});
-const getX = (p) => p.x;
-const getY = (p) => p.y;
+const makeDecartPoint = (x, y) => ({ x, y })
+const getX = (p) => p.x
+const getY = (p) => p.y
 
 export {
   calculateDistance,
