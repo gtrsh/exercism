@@ -1,4 +1,4 @@
-const removeFirstLevel = (xs) => xs
+const removeFirstLevel = (xs) => xs.filter(Array.isArray).flat()
 
 export {
   removeFirstLevel
