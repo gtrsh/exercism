@@ -15,6 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@hexlet/immutable-fs-trees": "^0.7.1",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
