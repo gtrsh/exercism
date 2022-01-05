@@ -12,3 +12,5 @@ printer.print();
 // Обязательно запустите этот код на своем компьютере
 // чтобы почувствовать то как работает setTimeout
 setTimeout(printer.print, 1000);
+
+setTimeout(() => printer.print(), 1000);
