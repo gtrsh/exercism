@@ -14,3 +14,6 @@ printer.print();
 setTimeout(printer.print, 1000);
 
 setTimeout(() => printer.print(), 1000);
+
+const boundPrint = printer.print.bind(printer, 'hey!');
+setTimeout(boundPrint, 1000);
