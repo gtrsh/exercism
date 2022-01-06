@@ -5,7 +5,7 @@ const f1 = () => {
 }
 f1()
 
-function f2() {
+function f2 () {
   console.log(this)
 }
 f2()
@@ -28,7 +28,7 @@ f1.bind({ name: 'context' })()
 
 const printerArrow = {
   items: [1, 32, 'context'],
-  print() {
+  print () {
     this.items.forEach(() => console.log(this.items))
   }
 }
