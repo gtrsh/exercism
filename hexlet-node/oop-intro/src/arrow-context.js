@@ -23,3 +23,25 @@ test.f2()
 
 f1.call({ name: 'context' })
 f1.bind({ name: 'context' })()
+
+// context loose example:
+
+const printerArrow = {
+  items: [1, 32, 'context'],
+  print() {
+    this.items.forEach(() => console.log(this.items))
+  }
+}
+
+printerArrow.print()
+
+/*
+const printer = {
+  items: [1],
+  print() {
+    this.items.forEach(function () { console.log(this.items); });
+  },
+};
+
+printer.print(); // undefined
+ */
