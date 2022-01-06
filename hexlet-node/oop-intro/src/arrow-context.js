@@ -18,3 +18,8 @@ const test = {
 
 test.f1()
 test.f2()
+
+// call and bind change context example:
+
+f1.call({ name: 'context' })
+f1.bind({ name: 'context' })()
