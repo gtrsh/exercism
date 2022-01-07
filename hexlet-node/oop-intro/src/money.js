@@ -30,11 +30,11 @@ Money.prototype.exchangeTo = function (currency) {
 
 Money.prototype.add = function (money) {
   const moneyAmount = (
-    (this.getCurrency() !== money.getCurrency()) ?
-      (this.getCurrency() === 'usd') ?
-        money.exchangeTo('usd').getValue() :
-        money.exchangeTo('eur').getValue() :
-      money.getValue()
+    (this.getCurrency() !== money.getCurrency())
+      ? (this.getCurrency() === 'usd')
+          ? money.exchangeTo('usd').getValue()
+          : money.exchangeTo('eur').getValue()
+      : money.getValue()
   )
 
   return new Money(this.getValue() + moneyAmount, this.getCurrency())
