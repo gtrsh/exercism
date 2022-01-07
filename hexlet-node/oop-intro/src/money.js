@@ -1,5 +1,11 @@
-const EUR_TO_USD_RATIO = 0.7
-const USD_TO_EUR_RATIO = 1.2
+const rates = {
+  usd: {
+    eur: 0.7,
+  },
+  eur: {
+    usd: 1.2,
+  },
+};
 
 const Money = function (value, currency = 'usd') {
   this.value = value
@@ -14,18 +20,15 @@ Money.prototype.getCurrency = function () {
   return this.currency
 }
 
-Money.prototype.exchangeTo = function (currency) {
-  if (this.getCurrency() === currency) {
-    return new Money(this.getValue(), this.getCurrency())
+Money.prototype.exchangeTo = function (newCurrency) {
+  const currency = this.getCurrency();
+  const currentValue = this.getValue();
+  if (currency === newCurrency) {
+    return new Money(currentValue, currency);
   }
+  const newValue = currentValue * rates[currency][newCurrency];
 
-  if (currency === 'usd') {
-    return new Money(this.getValue() * USD_TO_EUR_RATIO, currency)
-  }
-
-  if (currency === 'eur') {
-    return new Money(this.getValue() * EUR_TO_USD_RATIO, currency)
-  }
+  return new Money(newValue, newCurrency);
 }
 
 Money.prototype.add = function (money) {
