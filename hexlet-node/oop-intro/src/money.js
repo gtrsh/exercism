@@ -1,11 +1,11 @@
 const rates = {
   usd: {
-    eur: 0.7,
+    eur: 0.7
   },
   eur: {
-    usd: 1.2,
-  },
-};
+    usd: 1.2
+  }
+}
 
 const Money = function (value, currency = 'usd') {
   this.value = value
@@ -21,14 +21,14 @@ Money.prototype.getCurrency = function () {
 }
 
 Money.prototype.exchangeTo = function (newCurrency) {
-  const currency = this.getCurrency();
-  const currentValue = this.getValue();
+  const currency = this.getCurrency()
+  const currentValue = this.getValue()
   if (currency === newCurrency) {
-    return new Money(currentValue, currency);
+    return new Money(currentValue, currency)
   }
-  const newValue = currentValue * rates[currency][newCurrency];
+  const newValue = currentValue * rates[currency][newCurrency]
 
-  return new Money(newValue, newCurrency);
+  return new Money(newValue, newCurrency)
 }
 
 Money.prototype.add = function (money) {
@@ -36,7 +36,7 @@ Money.prototype.add = function (money) {
     money.exchangeTo(this.getCurrency()).getValue()
   )
 
-  return new Money(this.getValue() + additionalValue, this.getCurrency());
+  return new Money(this.getValue() + additionalValue, this.getCurrency())
 }
 
 Money.prototype.format = function () {
