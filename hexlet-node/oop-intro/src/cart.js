@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 class Cart {
   constructor () {
     this.items = []
@@ -12,20 +14,11 @@ class Cart {
   }
 
   getCost () {
-    return (
-      this.items
-        .map(({ item, count }) => item.price * count)
-        .reduce((acc, val) => acc + val)
-    )
+    return _.sumBy(this.getItems(), (goods) => goods.item.price * goods.count)
   }
 
   getCount () {
-    console.log(this.items)
-    return (
-      this.items
-        .map(({ count }) => count)
-        .reduce((acc, val) => acc + val)
-    )
+    return _.sumBy(this.getItems(), (goods) => goods.count)
   }
 }
 
