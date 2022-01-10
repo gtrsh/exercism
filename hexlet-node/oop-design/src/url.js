@@ -1,31 +1,32 @@
-import { URL } from 'url'
-import _ from 'lodash'
-
 class Url {
   constructor (url) {
-    this.url = url
+    this.url = new URL(url)
+    this.url.scheme = this.url.protocol.slice(0, -1)
+    this.url.queryParams = Object.fromEntries(this.url.searchParams)
   }
 
   getScheme () {
-    return new URL(this.url).protocol.slice(0, -1)
+    return this.url.scheme
   }
 
   getHostName () {
-    return new URL(this.url).hostname
+    return this.url.hostname
   }
 
   getQueryParams () {
-    return Object.fromEntries(
-      new URL(this.url).searchParams
-    )
+    return this.url.queryParams
   }
 
-  getQueryParam (param, def = null) {
-    return _.get(this.getQueryParams(), param, def)
+  getQueryParam (key, defaultValue = null) {
+    return this.url.searchParams.has(key) ? this.url.searchParams.get(key) : defaultValue
   }
 
-  equals (urlObj) {
-    return this.url === urlObj.url
+  toString () {
+    return this.url.toString()
+  }
+
+  equals (url) {
+    return (this.toString() === url.toString())
   }
 }
 
