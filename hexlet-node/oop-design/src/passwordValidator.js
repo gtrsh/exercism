@@ -1,33 +1,32 @@
-const hasNumber = (string) => (string.search(/\d/) !== -1);
+const hasNumber = (string) => (string.search(/\d/) !== -1)
 
 class PasswordValidator {
-  constructor(options = {}) {
+  constructor (options = {}) {
     const defaultOptions = {
       minLength: 8,
-      containNumbers: true,
-    };
+      containNumbers: true
+    }
 
-    this.options = { ...defaultOptions, ...options };
+    this.options = { ...defaultOptions, ...options }
   }
 
-  validate(password) {
-    const errors = {};
+  validate (password) {
+    const errors = {}
 
     if (password.length < this.options.minLength) {
-      errors.minLength = 'too small';
+      errors.minLength = 'too small'
     }
 
     if (this.options.containNumbers) {
       if (!hasNumber(password)) {
-        errors.containNumbers = 'should contain at least one number';
+        errors.containNumbers = 'should contain at least one number'
       }
     }
 
-    return errors;
+    return errors
   }
 }
 
 export {
   PasswordValidator
 }
- 
