@@ -15,6 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "async": "^3.2.3",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
