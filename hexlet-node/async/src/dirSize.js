@@ -11,18 +11,14 @@ const getDirectorySize = (dir, cb) => {
     }
 
     const files = fileNames.map((name) => path.join(dir, name))
-    async.map(files, fs.stat, (err, results) => {
+    async.map(files, fs.stat, (err, stats) => {
       if (err) {
         cb(err)
         return
       }
 
-      const filesSizeArray = (
-        results
-          .filter(file => file.isFile())
-          .map(({ size }) => size)
-      )
-      cb(null, _.sum(filesSizeArray))
+      const filesSizeArray = _.sumBy(stats.filter((stat) => stat.isFile()), 'size')
+      cb(null, filesSizeArray)
     })
   })
 }
