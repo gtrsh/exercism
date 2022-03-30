@@ -1,4 +1,4 @@
-import { compareFileSizes } from '../src/compareSize.js'
+import { compareFileSizes } from '../src/compareSize'
 
 test('compareFileSizes 1', () => {
   const filepath = '__fixtures__/f1'

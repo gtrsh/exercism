@@ -1,6 +1,6 @@
 import path from 'path'
 import fs from 'fs'
-import { getDirectorySize } from '../src/dirSize.js'
+import { getDirectorySize } from '../src/dirSize'
 
 const getPath = (dirpath) => path.join('__fixtures__', dirpath)
 

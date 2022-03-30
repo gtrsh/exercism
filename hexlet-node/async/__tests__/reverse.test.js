@@ -1,5 +1,5 @@
 import fs from 'fs/promises'
-import { reverse } from '../src/reverse.js'
+import { reverse } from '../src/reverse'
 
 const reverseLines = (data) => data.split('\n').reverse().join('\n')
 

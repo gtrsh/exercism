@@ -1,7 +1,7 @@
 import os from 'os'
 import fsp from 'fs/promises'
 import _ from 'lodash'
-import { touch } from '../src/touch.js'
+import { touch } from '../src/touch'
 
 test('touch 1', () => {
   const filepath = `${os.tmpdir()}/example`

@@ -1,7 +1,7 @@
 import path from 'path'
 import os from 'os'
 import fs from 'fs'
-import { unionFiles } from '../src/union.js'
+import { unionFiles } from '../src/union'
 
 let output
 let filepath1
