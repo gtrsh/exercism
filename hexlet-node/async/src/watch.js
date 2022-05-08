@@ -1,18 +1,23 @@
 import fs from 'fs'
 
 const watch = (filepath, delay, cb) => {
-  const timerId = setInterval(() => {
-    fs.stat(filepath, (err, stat) => {
+  let lastCheckTime = Date.now()
+
+  const check = (timerId) => {
+    fs.stat(filepath, (err, stats) => {
       if (err) {
         clearInterval(timerId)
         return cb(err)
       }
-      if (Date.now() <= stat.mtimeMs + delay) {
+      const { mtimeMs } = stats
+      if (mtimeMs > lastCheckTime) {
         cb(null)
+        lastCheckTime = mtimeMs
       }
     })
-  }, delay)
+  }
 
+  const timerId = setInterval(() => check(timerId), delay)
   return timerId
 }
 
