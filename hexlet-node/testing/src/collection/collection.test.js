@@ -1,6 +1,6 @@
 // @ts-check
-import getFunction from './collection-fn.js';
-const get = getFunction();
+import getFunction from './collection-fn.js'
+const get = getFunction()
 
 // Проверка, что функция возвращает нужное значение
 // по существующему ключу (прямой тест на работоспособность)
