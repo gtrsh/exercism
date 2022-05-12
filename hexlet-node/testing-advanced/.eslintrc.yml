@@ -1,0 +1,25 @@
+---
+
+plugins:
+  - import
+  - node
+  - promise
+  - jest
+
+env:
+  node: true
+  es2020: true
+  jest/globals: true
+
+extends:
+  - 'standard'
+  - 'plugin:import/recommended'
+  - 'plugin:node/recommended'
+  - 'plugin:promise/recommended'
+
+parser: '@babel/eslint-parser'
+
+parserOptions:
+  ecmaVersion: 11
+  sourceType: module
+  requireConfigFile: false
