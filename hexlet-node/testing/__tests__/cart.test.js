@@ -10,7 +10,7 @@ beforeEach(() => {
 
 test('add good to cart', () => {
   cart.addItem(goodApple, 2)
-  expect(cart.getItems()).toMatchObject([{good: goodApple, count: 2}])
+  expect(cart.getItems()).toMatchObject([{ good: goodApple, count: 2 }])
   cart.addItem(goodPineapple, 3)
   expect(cart.getItems()).toMatchObject([
     { good: goodApple, count: 2 },
