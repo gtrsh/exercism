@@ -15,4 +15,3 @@ const minus = (a, b) => a - b
 
  */
 const a_plus_abs = (a, b) => (b >= 0 ? plus : minus)(a, b)
-

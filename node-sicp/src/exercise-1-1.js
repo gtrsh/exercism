@@ -5,10 +5,10 @@ const x3 = 6 / 2
 const x4 = 2 * 4 + (4 - 6)
 
 const a = 3
-const b = a + 1 // 4
+const b = a + 1
 
-const tmp_e1 = (a + b + a * b) // 19
-const tmp_e2 = (a === b) // false
+const tmp_e1 = (a + b + a * b)
+const tmp_e2 = (a === b)
 const tmp_e3 = (
   b > a && b < a * b ? b : a
 )
