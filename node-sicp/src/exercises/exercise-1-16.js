@@ -1,5 +1,7 @@
 const is_even = (n) => n % 2 === 0
 const square = (n) => n ** 2
+const halve = (n) => n / 2
+const dec = (n) => n - 1
 
 const exp = (b, n) => {
   const exp_iter = (a, b, n) => {
@@ -7,8 +9,8 @@ const exp = (b, n) => {
       return a
     } else {
       return is_even(n) ?
-        exp_iter(a, square(b), n / 2) :
-        exp_iter(a * b, b, n - 1)
+        exp_iter(a, square(b), halve(n)) :
+        exp_iter(a * b, b, dec(n))
     }
   }
 
