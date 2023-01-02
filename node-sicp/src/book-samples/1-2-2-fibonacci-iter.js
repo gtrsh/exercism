@@ -28,4 +28,5 @@ const fib = (n) => {
   return fib_iter(1, 0, n)
 }
 
-console.log(fib(8))
+console.log(fib(8))   // 21
+console.log(fib(78))  // 8944394323791464 fn_call: 79

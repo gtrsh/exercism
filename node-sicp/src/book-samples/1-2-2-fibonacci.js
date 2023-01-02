@@ -18,4 +18,4 @@ const fib = (n) => (
       : fib(n - 1) + fib(n - 2)
 )
 
-console.log(fib(8))
+console.log(fib(8))   // 21
