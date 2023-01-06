@@ -34,3 +34,11 @@ const sum_pi_gen = (a, b) => {
 console.log(sum_pi_gen(1, 1000) * 8)  // 3.139592655589783
 console.log(sum_integer_gen(1, 10))   // 55
 console.log(sum_cubes_gen(1, 10))     // 3025
+
+const integral = (f, a, b, dx) => {
+  const add_dx = (x) => x + dx
+  return sum(f, add_dx, a + dx / 2, b) * dx
+}
+
+console.log(integral(cube, 0, 1, 0.01));  // 0.24998750000000042
+console.log(integral(cube, 0, 1, 0.001)); // 0.249999875000001
