@@ -18,4 +18,14 @@
          [:button.btn.btn--link.tooltip
           {:data-tooltip "Remove"
            :on-click #(swap! state/orders dissoc id)}
-          [:i.icon.icon--cross]]]])]]])
+          [:i.icon.icon--cross]]]])]
+    [:div.total
+     [:hr]
+     [:div.item
+      [:div.content "Total"]
+      [:div.action
+       [:div.price "total stub"]]
+      [:button.btn.btn--link.tooltip
+       {:data-tooltip "Remove all"
+        :on-click #(reset! state/orders {})}
+       [:i.icon.icon--delete]]]]]])
