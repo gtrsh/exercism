@@ -1,6 +1,12 @@
 (ns giggin.components.orders
   (:require [giggin.state :as state]))
 
+(defn total
+  []
+  (->> @state/orders
+       (map (fn [[id quant]] (* quant (get-in @state/gigs [id :price]))))
+       (reduce +)))
+
 (defn orders
   []
   [:aside
@@ -24,7 +30,7 @@
      [:div.item
       [:div.content "Total"]
       [:div.action
-       [:div.price "total stub"]]
+       [:div.price (total)]]
       [:button.btn.btn--link.tooltip
        {:data-tooltip "Remove all"
         :on-click #(reset! state/orders {})}
