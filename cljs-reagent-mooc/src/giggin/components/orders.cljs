@@ -1,5 +1,6 @@
 (ns giggin.components.orders
-  (:require [giggin.state :as state]))
+  (:require [giggin.state :as state]
+            [giggin.helpers :refer [format-price]]))
 
 (defn total
   []
@@ -24,7 +25,7 @@
           [:div.content
            [:p.title (str (get-in @state/gigs [id :title]) " \u00D7 " quant)]]
           [:div.action
-           [:div.price (* (get-in @state/gigs [id :price]) quant)]
+           [:div.price (format-price (* (get-in @state/gigs [id :price]) quant))]
            [:button.btn.btn--link.tooltip
             {:data-tooltip "Remove"
              :on-click #(swap! state/orders dissoc id)}
@@ -34,7 +35,7 @@
        [:div.item
         [:div.content "Total"]
         [:div.action
-         [:div.price (total)]]
+         [:div.price (format-price (total))]]
         [:button.btn.btn--link.tooltip
          {:data-tooltip "Remove all"
           :on-click #(reset! state/orders {})}
