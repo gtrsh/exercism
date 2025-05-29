@@ -10,6 +10,7 @@ export default [
   {
     files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
+      globals: { ...globals.node },
       parser: tsParser,
       parserOptions: {
         ecmaVersion: 'latest',
