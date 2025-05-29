@@ -122,6 +122,9 @@ dist
 # DynamoDB Local files
 .dynamodb/
 
+# SQlite
+*.db
+
 # TernJS port file
 .tern-port
 
@@ -134,3 +137,5 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+/generated/prisma
