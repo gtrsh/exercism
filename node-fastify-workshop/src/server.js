@@ -1,12 +1,11 @@
 import Fastify from 'fastify'
+import createApp from './index.js'
 
 const fastify = Fastify()
 
-fastify.get('/', async () => ({ hello: 'world' }))
+const app = await createApp(fastify)
 
-try {
-  await fastify.listen({ port: 3000 })
-} catch (err) {
-  fastify.log.error(err)
+await app.listen({ port: 3000 }).catch((e) => {
+  console.error(e)
   process.exit(1)
-}
+})
