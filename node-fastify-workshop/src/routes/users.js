@@ -1,7 +1,6 @@
-const users = [{id: 1, name: 'John'}, {id: 2, name: 'Alice'}]
-
-const usersPlugin = async (fastify, opts) => {
-    fastify.get('/', async (req, reply) => ({ data: users }))
+export default async (fastify, opts) => {
+  fastify.get('/', async (req, reply) => [
+    {username: 'john-doe'},
+    {username: 'eva-lu-ator'},
+  ])
 }
-
-export default usersPlugin
