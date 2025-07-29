@@ -9,6 +9,6 @@ const pinoPretty = {
   }
 }
 
-const createLogger = () => pino()
+const createLogger = () => pino(process.env.DEV ? pinoPretty : {})
 
 export default createLogger
