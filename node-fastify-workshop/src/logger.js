@@ -9,6 +9,8 @@ const pinoPretty = {
   }
 }
 
-const createLogger = () => pino(process.env.DEV ? pinoPretty : {})
+const createLogger = (config) => pino(
+  config.PRETTY_PRINT === 'true' ? pinoPretty : {}
+)
 
 export default createLogger
